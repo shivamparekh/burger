@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 
 router.get('/index', function(req, res) {
 
-	burger.selectAll(function(data) {
+	burger.all(function(data) {
 
 		var hbsObj = {burgers: data};
 
@@ -26,7 +26,7 @@ router.get('/index', function(req, res) {
 
 router.post('/insertOne', function(req, res) {
 
-	burger.insertOne(['burger_name', 'devoured'], [req.body.name, false], function() {
+	burger.create(['burger_name', 'devoured'], [req.body.name, false], function() {
 
 		res.redirect('/index');
 		
@@ -39,7 +39,7 @@ router.put('/updateOne/:id', function(req, res) {
 
 	console.log("condition", condition);
 
-	burger.updateOne({
+	burger.update({
 
 		devoured: req.body.devoured},
 

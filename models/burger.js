@@ -6,7 +6,7 @@ var orm = require('../config/orm');
 
 var burger = {
 
-	selectAll: function(callback) {
+	all: function(callback) {
 
 		orm.selectAll('burgers', function(res) {
 
@@ -15,7 +15,7 @@ var burger = {
 		})
 	},
 
-	insertOne: function(cols, vals, callback) {
+	create: function(cols, vals, callback) {
 
 		orm.insertOne('burgers', cols, vals, function(res) {
 
@@ -24,7 +24,7 @@ var burger = {
 		})
 	},
 
-	updateOne: function(objColVals, condition, callback) {
+	update: function(objColVals, condition, callback) {
 
 		orm.updateOne('burgers', objColVals, condition, function(res) {
 
@@ -35,3 +35,4 @@ var burger = {
 }
 
 module.exports = burger;
+
