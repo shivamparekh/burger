@@ -2,7 +2,7 @@
 
 var connection = require("../config/connection.js");
 
-// helper functions for SQL syntax (Given to us in Mvc Example.
+// helper functions for SQL syntax (Given to us in Mvc Example)
 
 function printQuestionMarks(num) {
 
